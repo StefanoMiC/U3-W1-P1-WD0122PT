@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&family=Montserrat:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+body {
+  background: #f5f5f5;
+  color: #18314f;
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  line-height: 1;
+  font-weight: 400;
+  margin: 3em 0;
+}
+
+h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-bottom: 3em;
+  letter-spacing: 8px;
+  text-align: center;
+  color: #8bc34a;
+}
+
+/* h2::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #18314f;
+  width: 20%;
+  margin: 3em auto 0;
+} */
+
+h2 span {
+  font-size: 5em;
+  font-weight: 700;
+  display: block;
+  color: #18314f;
+}
+
+a {
+  color: #8bbeb2;
+}
+a:hover {
+  color: #7ae7c7;
+}
+
+section {
+  background: white;
+  box-shadow: 0 7px 10px -10px rgb(0 0 0 / 25%);
+  width: 80%;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 20px;
+  border: 3px solid #98ca60ba;
+}
+
+.the-ones-you-know code {
+  font-weight: 600;
+}
+
+.universal code {
+  background: #d1ecef;
+  padding: 0.25em;
+}
+
+.direct-children .example {
+  padding: 1em;
+  background: #d1ecef;
+}
+
+.direct-children .example p {
+  margin: 0;
+}
+
+.adjacent-sibling,
+.general-sibling h2,
+.child-selector,
+.before-after {
+  text-align: center;
+}
+
+.adjacent-sibling .box,
+.general-sibling .box,
+.child-selector .box,
+.before-after .box {
+  height: 75px;
+  width: 75px;
+  background: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.general-sibling ul {
+  text-align: left;
+}
+
+.inputs label {
+  display: block;
+}
+
+.inputs input,
+.inputs textarea {
+  border-radius: 6px;
+  border-width: 1px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.target-selector ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+button,
+input[type="button"],
+a.button {
+  background-color: blue;
+}
+
+/* =================================
+   Universal 
+   ================================= */
+
+.universal ul > * {
+  border: 2px solid coral;
+}
+
+/* =================================
+   Direct children
+   ================================= */
+
+.direct-children > p {
+  color: red;
+}
+
+/* .direct-children .example p {
+  color: inherit;
+} */
+
+/* =================================
+   Adjacent siblings
+   ================================= */
+.adjacent-sibling .wrapper + p {
+  background-color: #7ae7c7;
+}
+
+.adjacent-sibling .wrapper h4 + p {
+  font-style: italic;
+}
+.adjacent-sibling .wrapper h4 + p + p {
+  font-size: 1rem;
+}
+
+/* =================================
+   General siblings
+   ================================= */
+
+.general-sibling p ~ ul:not(span + ul) {
+  background-color: palevioletred;
+}
+
+/* .general-sibling span + ul {
+  background-color: initial;
+} */
+
+/* =================================
+   Child Selector
+   ================================= */
+/* 
+.child-selector div:first-child {
+  background-color: red;
+} */
+.child-selector div:first-of-type {
+  background-color: red;
+}
+
+.child-selector div:last-child {
+  background-color: red;
+}
+/* .child-selector div:nth-of-type(n + 3):nth-of-type(-n + 6) {
+  background-color: red;
+} */
+
+/* =================================
+   Attributes
+   ================================= */
+.attribute a[href="https://www.google.com"]
+{
+  color: blue;
+}
+
+.attribute a[href^="https"] {
+  background-color: green;
+}
+
+.attribute a[href^="http://"]
+{
+  background-color: red;
+}
+.attribute a[href$=".html"] {
+  background-color: blue;
+}
+.attribute a[href$=".pdf"] {
+  background-color: black;
+}
+
+/* =================================
+   Inputs
+   ================================= */
+
+input[checked] {
+  margin-left: 20px;
+}
+/* input[placeholder*="name"] {
+  border: 2px solid coral;
+} */
+input[placeholder$="username" i] {
+  border: 2px solid red;
+}
+
+/* EXAMPLE OF SELECTION STARTING FROM BODY WITHOUT USING SPECIFIC CLASSES */
+/* SELECTS THE BLUE DIV AND PUTS A BORDER AROUND IT */
+body > section:nth-of-type(3) > div {
+  border: 2px solid red;
+}
+
+/* =================================
+   Before / After
+   ================================= */
+
+/* =================================
+   Target Selector
+   ================================= */
